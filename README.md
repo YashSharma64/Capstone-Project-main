@@ -89,7 +89,7 @@ This analysis supports targeted intervention decisions, including risk-tiered di
 | `insulin` | Insulin status | Treatment pattern comparison |
 | `readmitted_30` | 30-day readmission flag | Primary target variable |
 
-For full column definitions, see `docs/data_dictionary.md` (or `data/data_dictionary.md` if your team stores it there).
+For full column definitions, see `data/data_dictionary.md`.
 
 ## KPI Framework
 
@@ -140,35 +140,43 @@ Store dashboard screenshots in `tableau/screenshots/` and document the public li
 SectionName_TeamID_ProjectName/
 |
 |-- README.md
+|-- requirements.txt
 |
 |-- data/
 |   |-- raw/                         # Original dataset (never edited)
 |   `-- processed/                   # Cleaned output from ETL pipeline
-|
-|-- notebooks/
-|   |-- 01_extraction.ipynb
-|   |-- 02_cleaning.ipynb
-|   |-- 03_eda.ipynb
-|   |-- 04_statistical_analysis.ipynb
-|   `-- 05_final_load_prep.ipynb
-|
-|-- scripts/
-|   `-- etl_pipeline.py
-|
-|-- tableau/
-|   |-- screenshots/
-|   `-- dashboard_links.md
-|
-|-- reports/
-|   |-- README.md
-|   |-- project_report_template.md
-|   `-- presentation_outline.md
-|
-|-- docs/
 |   `-- data_dictionary.md
 |
-|-- DVA-oriented-Resume/
-`-- DVA-focused-Portfolio/
+|-- notebooks/
+|   |-- 02_cleaning.ipynb
+|   |-- 03_eda.ipynb
+|   `-- 04_statistical_analysis.ipynb
+|
+|-- scripts/
+|   `-- .gitignore
+|
+|-- tableau/
+|   `-- .gitignore
+|
+|-- dashboard/
+|   `-- tableau_dashboard_plan.md
+|
+|-- presentation/
+|   `-- deck_outline.md
+|
+|-- reports/
+|   |-- final_report_outline.md
+|   |-- phase1_submission.md
+|   `-- submission_checklist.md
+|
+|-- src/
+|   |-- clean_data.py
+|   |-- data_utils.py
+|   `-- project_config.py
+|
+|-- docs/
+|   `-- .gitignore
+`-- .venv/                           # local virtual env (not required for submission)
 ```
 
 ## Analytical Pipeline
@@ -213,9 +221,8 @@ Recommended Python libraries: `pandas`, `numpy`, `matplotlib`, `seaborn`, `scipy
 - [ ] All notebooks committed in `.ipynb` format
 - [ ] `data/raw/` contains original unedited dataset
 - [ ] `data/processed/` contains cleaned output
-- [ ] `tableau/screenshots/` contains dashboard screenshots
-- [ ] `tableau/dashboard_links.md` contains Tableau Public URL
-- [ ] `docs/data_dictionary.md` is complete
+- [ ] `tableau/` contains dashboard assets and links (or published URL reference)
+- [ ] `data/data_dictionary.md` is complete
 - [ ] `README.md` includes complete project details
 - [ ] All members have visible commits and pull requests
 
